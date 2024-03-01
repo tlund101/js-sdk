@@ -11,7 +11,9 @@ See the License for the specific language governing permissions and
 limitations under the License.
 */
 
+import { GetBulkSecretResponse, GetSecretResponse } from "../../proto/dapr/proto/runtime/v1/dapr_pb";
+
 export default interface IClientSecret {
-  get(secretStoreName: string, key: string, metadata?: string): Promise<object>;
-  getBulk(secretStoreName: string): Promise<object>;
+  get(secretStoreName: string, key: string, metadata?: string): Promise<GetSecretResponse>;
+  getBulk(secretStoreName: string): Promise<GetBulkSecretResponse>;
 }
